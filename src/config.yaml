@@ -1,0 +1,9 @@
+best_params:
+  learning_rate: 0.0017654217075230084
+  batch_size: 128
+  dim: 960
+  n_heads: 16
+  nb_features: 512
+  depth: 4
+  dropout: 0.1
+  optimizer: SGD
