@@ -9,6 +9,7 @@ from sklearn.model_selection import StratifiedKFold
 from src.model import Performer
 from src.train import train_model
 from src.evaluate import evaluate_model
+from src.dataset import get_dataloaders
 
 
 def objective(trial, trainset, num_epochs=7, k_folds=5, seed=42):
@@ -72,10 +73,13 @@ def objective(trial, trainset, num_epochs=7, k_folds=5, seed=42):
     return total_accuracy / k_folds
 
 
-def optimize_hyperparameters(trainset, n_trials=30):
+def optimize_hyperparameters(n_trials=30):
     """
     Run Optuna optimization, save best hyperparameters (YAML) and all trials (CSV).
     """
+
+    trainset, _, _, _= get_dataloaders()
+
     study = optuna.create_study(direction='maximize', study_name='PerformerOptuna')
     study.optimize(lambda trial: objective(trial, trainset), n_trials=n_trials)
 
@@ -105,3 +109,7 @@ def optimize_hyperparameters(trainset, n_trials=30):
     print(f"All Optuna trials saved to: {csv_path}")
 
     return best_params
+
+  
+if __name__ == "__main__":
+    optimize_hyperparameters(n_trials=50)
