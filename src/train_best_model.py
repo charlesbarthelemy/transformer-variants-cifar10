@@ -108,3 +108,6 @@ def train_best_model(patience=10, num_epochs=100):
     plot_prediction_distribution(model, testloader, device, testset.classes)
 
     return model
+
+if __name__ == "__main__":
+    trained_model = train_best_model()
