@@ -1,8 +1,20 @@
+# Python
 __pycache__/
-*.pth
-*.log
-*.db
-data/
-logs/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# Environment
 .env
-.ipynb_checkpoints/
+.venv/
+*.log
+
+# Data & outputs
+data/
+checkpoints/
+tensorboard/
+*.pth
+
+# OS
+.DS_Store

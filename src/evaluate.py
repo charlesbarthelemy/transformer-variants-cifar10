@@ -6,7 +6,7 @@ def evaluate_model(model, dataloader, device):
     model.eval()
     correct = 0
     total = 0
-    start_time = time.time()  # Start timing
+    start_time = time.time()
 
     with torch.no_grad():
         loop = tqdm(dataloader, desc="Evaluating", leave=False)
@@ -17,7 +17,7 @@ def evaluate_model(model, dataloader, device):
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
 
-    inference_time = time.time() - start_time  # End timing
+    inference_time = time.time() - start_time
     accuracy = 100 * correct / total
     print(f"Accuracy: {accuracy:.2f}%, Inference Time: {inference_time:.2f} seconds")
     return accuracy, inference_time

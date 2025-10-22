@@ -1,4 +1,7 @@
 best_params:
+  cval_accuracy: 0.9534
+  test_accuracy: 0.9512
+  inference_time: 0.0345
   kernel: relu
   learning_rate: 0.0017654217075230084
   batch_size: 128
@@ -8,3 +11,45 @@ best_params:
   depth: 4
   dropout: 0.1
   optimizer: SGD
+
+# best_params:
+#   cval_accuracy: 0.7748
+#   test_accuracy: 0.7748
+#   inference_time: 1.49
+#   kernel: elu
+#   learning_rate: 5e-4
+#   batch_size: 128
+#   dim: 768
+#   n_heads: 8
+#   nb_features: 256
+#   depth: 1
+#   dropout: 0.0
+#   optimizer: AdamW
+
+# best_params:
+#   cval_accuracy: 0.8864
+#   test_accuracy: 0.8864
+#   inference_time: 3.05
+#   kernel: gelu
+#   learning_rate: 6.25e-5
+#   batch_size: 128
+#   dim: 768
+#   n_heads: 16
+#   nb_features: 128
+#   depth: 1
+#   dropout: 0.0
+#   optimizer: Adam
+
+# best_params:
+#   cval_accuracy: 0.8617
+#   test_accuracy: 0.8617
+#   inference_time: 3.02
+#   kernel: exp
+#   learning_rate: 1e-3
+#   batch_size: 64
+#   dim: 576
+#   n_heads: 16
+#   nb_features: 256
+#   depth: 3
+#   dropout: 0.1
+#   optimizer: Adam
